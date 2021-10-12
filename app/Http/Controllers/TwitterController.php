@@ -74,8 +74,6 @@ class TwitterController extends Controller
    
 
     public function home(){
-        return Redirect::route('error')
-        ->with('alert-error', 'Crab! Something went wrong while signing you up!');
         $timeLines  = Twitter::getHomeTimeline();
         // dd($timeLines);
         return view('home',['timeLines'=>$timeLines]);
