@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('css')
-    <link href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
     <style>
         .like{
             color: red;
@@ -27,10 +26,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                   
                     <div> <img src="{{$timeline->user->profile_image_url_https}}"/>{{$timeline->user->name}} - {{date('d-m-Y H:i:s', strtotime($timeline->created_at))}}</div>
-                   
-
                 </div>
 
                 <div class="card-body">
@@ -44,7 +40,6 @@
                             @endforeach
                         @endif
                     </div>
-
                     <div style="font-size: 36px;">
                         @if($timeline->favorited)
                             <i class="fas fa-heart like" tid="{{$timeline->id_str}}"  onclick="unlike(this);"></i>
@@ -52,13 +47,7 @@
                             <i class="fas fa-heart unlike" tid="{{$timeline->id_str}}" onclick="like(this);"></i>
                         @endif
                         <label>{{$timeline->favorite_count}}</label>
-                        
-                 
                     </div>
-                   
-
-                    
-             
                 </div>
             </div>
         </div>
@@ -71,11 +60,7 @@
 
 @section('script')
 <script src="https://kit.fontawesome.com/807614c11a.js" crossorigin="anonymous"></script>
-
-
-
 <script>
-
     function like(obj){
         console.log(obj);
         $.ajax({

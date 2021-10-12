@@ -33,7 +33,9 @@ Route::group(['middleware' => 'auth'], function(){
 Route::get('/login', 'App\Http\Controllers\TwitterController@login')->name('login');
 Route::get('/callback', 'App\Http\Controllers\TwitterController@callback')->name('callback');
 Route::post('/logout', 'App\Http\Controllers\TwitterController@logout')->name('logout');
-
+Route::get('/error',function(){ 
+    return view('error');
+})->name('error');
 
 
 
